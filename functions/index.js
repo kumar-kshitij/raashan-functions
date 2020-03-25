@@ -83,7 +83,7 @@ exports.deleteAdmin = functions.https.onRequest((req, res) => {
             await admin
                 .firestore()
                 .collection('admins')
-                .doc(userRecord.uid)
+                .doc(params.uid)
                 .delete();
             
             return res.status(200).json({
